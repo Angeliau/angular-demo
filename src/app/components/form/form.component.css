@@ -1,0 +1,32 @@
+h2{
+    text-align: center;
+}
+
+.person{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #eee;
+}
+
+.person li{
+    height: 50px;
+    line-height: 50px;
+}
+
+ul,ol{
+    list-style-type: none;
+}
+
+button{
+    width: 100px;
+    height: 30px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}

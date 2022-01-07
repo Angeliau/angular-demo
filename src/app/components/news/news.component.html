@@ -1,0 +1,69 @@
+<h1>angular模板绑定数据</h1>
+<h2>{{title}}</h2>
+<h3>{{msg}}</h3>
+<h4>{{text}}</h4>
+<h5>{{addr}}</h5>
+<hr/>
+
+<h6>{{userInfo.username}}</h6>
+<h6>{{userInfo.age}}</h6>
+<div>
+    {{aaa}}
+</div>
+
+<h1>angular模板绑定属性</h1>
+<div title="我是一个div">
+    鼠标停留看下效果
+</div>
+
+<br>
+
+<div [title]="name">
+    张三
+</div>
+<hr/>
+
+<h1>angular模板绑定HTML</h1>
+<div>
+    {{content}}
+</div>
+<br>
+
+<span [innerHTML]="content" class="red"></span>
+<hr>
+
+<h1>angular模板允许简单的运算</h1>
+1+2={{1+2}}
+
+<ul>
+    <li *ngFor="let item of arr">
+        {{item}}
+    </li>
+</ul>
+<hr>
+
+<ol>
+    <li *ngFor="let item of list">
+        {{item}}
+    </li>
+</ol>
+
+<hr>
+<ul>
+    <li *ngFor="let item of userlist">
+        {{item.username}}---{{item.age}}
+    </li>
+</ul>
+
+<hr>
+
+<ul>
+    <li *ngFor="let item of cars">
+        {{item.category}}
+        <ol>
+            <li *ngFor="let car of item.list">
+                {{car.series}}--{{car.price}}
+            </li>
+        </ol>
+    </li>
+</ul>
