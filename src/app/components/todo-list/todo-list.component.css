@@ -1,0 +1,26 @@
+h2{
+    text-align: center;
+}
+.todolist{
+    width: 400px;
+    margin: 20px auto;
+}
+
+.todolist .keyword{
+    width: 390px;
+    height: 32px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul li .del-btn{
+    height: 16px;
+    width: 18px;
+}
+
+li{
+    line-height: 45px;
+}
+

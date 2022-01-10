@@ -1,0 +1,26 @@
+<h2>todoList</h2>
+<div class="todolist">
+    <!-- $event:监听事件对象 -->
+    <input type="text" class="keyword" [(ngModel)]="keyword" (keyup)="doAdd($event)"/>
+    <hr />
+
+    <h3>待办事项</h3>
+    <ul>
+        <li *ngFor="let item of todoList;let key=index" [hidden]="item.status == true">
+            <input type="checkbox" [(ngModel)]="item.status" (change)="checkBoxChange()"/> {{item.title}}  &nbsp;&nbsp; <button class="del-btn" (click)="deleteData(key)">x</button>
+            <!-- <pre>{{item | json}}</pre> -->
+        </li>
+    </ul>
+
+    <h3>已完成事项</h3>
+    <ul>
+        <li *ngFor="let item of todoList;let key=index" [hidden]="item.status == false">
+            <input type="checkbox" [(ngModel)]="item.status" (change)="checkBoxChange()"/> {{item.title}}  &nbsp;&nbsp; <button class="del-btn" (click)="deleteData(key)">x</button>
+            <!-- <pre>{{item | json}}</pre> -->
+        </li>
+    </ul>
+</div>
+
+
+
+

@@ -11,6 +11,10 @@ import { HomeComponent } from './components/home/home.component';
 import { FormComponent } from './components/form/form.component';
 import { SearchComponent } from './components/search/search.component';
 import { EchartComponent } from './components/echart/echart.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+
+//引入并配置服务
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +23,16 @@ import { EchartComponent } from './components/echart/echart.component';
     HomeComponent,
     FormComponent,
     SearchComponent,
-    EchartComponent
+    EchartComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgxEchartsModule
   ],
-  providers: [],
+  //声明服务
+  providers: [StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

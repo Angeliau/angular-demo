@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-search',
@@ -10,9 +11,16 @@ export class SearchComponent implements OnInit {
   public keyword:string='';
   public historyList:any[]=[];
 
-  constructor() { }
+  constructor(public storage:StorageService) { 
+    // console.log(this.storage.get());
+  }
 
   ngOnInit(): void {
+    //页面刷新会执行该函数
+    var searchList = this.storage.get('searchList');
+    if (searchList){
+      this.historyList = searchList;
+    }
   }
 
   doSearch(){
@@ -21,6 +29,8 @@ export class SearchComponent implements OnInit {
         this.keyword="";
       }else{
         this.historyList.push(this.keyword);
+        //添加到本地缓存
+        this.storage.set('searchList',this.historyList);
       }
     }
     
@@ -31,6 +41,7 @@ export class SearchComponent implements OnInit {
   deleteHistory(key:any){
     // alert(key);
     this.historyList.splice(key,1);
+    this.storage.set('searchList',this.historyList);
   }
 
 }
