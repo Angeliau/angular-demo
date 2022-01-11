@@ -1,0 +1,14 @@
+<!-- 父组件向子组件传值 -->
+<app-header [title]="title" [msg]="msg" [run]="run" [index]='this'></app-header>
+
+<hr/>
+
+<div>父组件</div>
+<hr/>
+
+
+<!-- 父组件从子组件获取数据 -->
+<app-footer #footer (outer)="parentRun($event)"></app-footer>
+<button (click)="getChildMsg()">获取footer子组件的数据</button>
+<br>
+<button (click)="getChildRun()">执行footer子组件的方法</button>
