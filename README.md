@@ -28,3 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Run this project
 Run `npm install` to install necessary packages firstly,then run `ng serve --open` to start.
+
+## Run http-post-service
+Open cmd in `angular-demo\http-post-service`,run `npm install` to install necessary packages. Run `node app.js` in cmd window, the service will listen for links on port 127.0.0.1:3000.
