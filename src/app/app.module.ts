@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 // echarts
 import { NgxEchartsModule } from 'ngx-echarts';
+//get请求数据,引入HttpClientModule
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
@@ -15,9 +17,12 @@ import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { IndexComponent } from './components/index/index.component';
+import { DataInteractionComponent } from './components/data-interaction/data-interaction.component';
 
 //引入并配置服务
 import { StorageService } from './services/storage.service';
+//http服务
+import { HttpserviceService } from './services/httpservice.service';
 
 @NgModule({
   //schemas:[NO_ERRORS_SCHEMA],
@@ -31,15 +36,21 @@ import { StorageService } from './services/storage.service';
     TodoListComponent,
     FooterComponent,
     HeaderComponent,
-    IndexComponent
+    IndexComponent,
+    DataInteractionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   //声明服务
-  providers: [StorageService],
+  providers: [
+    StorageService,
+    HttpserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
